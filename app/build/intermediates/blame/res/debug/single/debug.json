@@ -1,0 +1,142 @@
+[
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_send_image.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_send_image.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_add_contact.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_add_contact.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_messagebg2.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\drawable\\messagebg2.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dp_placeholder_sm.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\drawable\\dp_placeholder_sm.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dp_placeholder.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\drawable\\dp_placeholder.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_success.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\drawable\\btn_success.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_main.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_chat.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_chat.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_friend_list_row.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\custom_friend_list_row.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_lastchat_row.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\custom_lastchat_row.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_messagebg1.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\drawable\\messagebg1.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_chat.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\menu\\menu_chat.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_friend_profile.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_friend_profile.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\fragment_contact.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_notication_row.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\custom_notication_row.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_message_area.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\message_area.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_notifications.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_notifications.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background_round.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\drawable\\background_round.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu_invite.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\drawable\\ic_menu_invite.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_primary.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\drawable\\btn_primary.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profile.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chat.xml.flat",
+        "source": "D:\\MyS3Chat-master\\MyS3Chat-master\\app\\src\\main\\res\\layout\\fragment_chat.xml"
+    }
+]

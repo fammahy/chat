@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: hani.momanii.supernova_emoji_library:supernova-emoji-library:0.0.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0a41b46a359e3474b05f6136154eb0d9/jetified-supernova-emoji-library-0.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0a41b46a359e3474b05f6136154eb0d9/jetified-supernova-emoji-library-0.0.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0a41b46a359e3474b05f6136154eb0d9/jetified-supernova-emoji-library-0.0.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/hani.momanii.supernova_emoji_library/supernova-emoji-library/0.0.2/3385f249360b8d428940cb1691639eb691c29106/supernova-emoji-library-0.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/hani.momanii.supernova_emoji_library/supernova-emoji-library/0.0.2/e523fdb660fd9a88153e3cf682ad2bc05cecdd86/supernova-emoji-library-0.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

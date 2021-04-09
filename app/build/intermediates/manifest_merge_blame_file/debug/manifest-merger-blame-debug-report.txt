@@ -1,0 +1,177 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mys3soft.mys3chat"
+4    android:versionCode="28"
+5    android:versionName="3.8" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.VIBRATE" />
+12-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:6:5-66
+12-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:6:22-63
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:7:5-79
+13-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:8:5-79
+14-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:8:22-77
+15
+16    <application
+16-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:10:5-54:19
+17        android:allowBackup="true"
+17-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:11:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.1.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\1ea2dc9e0bdb809bf3be81740ea8e422\core-1.1.0\AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:icon="@mipmap/ic_launcher"
+20-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:12:9-43
+21        android:label="@string/app_name"
+21-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:13:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:14:9-54
+23        android:supportsRtl="true"
+23-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:15:9-35
+24        android:theme="@style/AppTheme" >
+24-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:16:9-40
+25        <activity
+25-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:17:9-25:20
+26            android:name="com.mys3soft.mys3chat.ActivityMain"
+26-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:18:13-41
+27            android:label="@string/title_activity_main"
+27-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:19:13-56
+28            android:theme="@style/AppTheme.NoActionBar" >
+28-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:20:13-56
+29            <intent-filter>
+29-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:21:13-24:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:22:17-69
+30-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:22:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:23:17-77
+32-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:23:27-74
+33            </intent-filter>
+34        </activity>
+35        <activity
+35-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:26:9-28:46
+36            android:name="com.mys3soft.mys3chat.ActivityLogin"
+36-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:26:19-48
+37            android:launchMode="singleTop"
+37-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:28:13-43
+38            android:noHistory="true" />
+38-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:27:13-37
+39        <activity android:name="com.mys3soft.mys3chat.ActivityRegister" />
+39-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:29:9-56
+39-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:29:19-51
+40        <activity android:name="com.mys3soft.mys3chat.ActivityProfile" />
+40-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:30:9-53
+40-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:30:19-50
+41        <activity
+41-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:31:9-33:49
+42            android:name="com.mys3soft.mys3chat.ActivityChat"
+42-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:31:19-47
+43            android:launchMode="singleTop"
+43-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:33:13-43
+44            android:theme="@style/AppTheme.NoActionBar" />
+44-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:32:13-56
+45        <activity android:name="com.mys3soft.mys3chat.ActivityAddContact" />
+45-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:34:9-57
+45-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:34:19-53
+46        <activity android:name="com.mys3soft.mys3chat.ActivityFriendProfile" />
+46-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:35:9-60
+46-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:35:19-56
+47        <activity android:name="com.mys3soft.mys3chat.ActivityNotifications" />
+47-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:36:9-61
+47-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:36:19-56
+48
+49        <service
+49-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:38:9-42:44
+50            android:name="com.mys3soft.mys3chat.AppService"
+50-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:39:13-39
+51            android:enabled="true"
+51-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:40:13-35
+52            android:exported="true"
+52-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:41:13-36
+53            android:stopWithTask="false" />
+53-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:42:13-41
+54
+55        <receiver
+55-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:44:9-51:20
+56            android:name="com.mys3soft.mys3chat.AppReceiver"
+56-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:45:13-40
+57            android:enabled="true"
+57-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:46:13-35
+58            android:exported="true" >
+58-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:47:13-36
+59            <intent-filter>
+59-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:48:13-50:29
+60                <action android:name="com.mys3soft.mys3chat.restartservice" />
+60-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:49:17-79
+60-->D:\MyS3Chat-master\MyS3Chat-master\app\src\main\AndroidManifest.xml:49:25-76
+61            </intent-filter>
+62        </receiver>
+63
+64        <service
+64-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\bbfae25f55bf545c2bc2befab0463461\firebase-storage-19.2.1\AndroidManifest.xml:30:9-36:19
+65            android:name="com.google.firebase.components.ComponentDiscoveryService"
+65-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\bbfae25f55bf545c2bc2befab0463461\firebase-storage-19.2.1\AndroidManifest.xml:31:13-84
+66            android:directBootAware="true"
+66-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+67            android:exported="false" >
+67-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\bbfae25f55bf545c2bc2befab0463461\firebase-storage-19.2.1\AndroidManifest.xml:32:13-37
+68            <meta-data
+68-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\bbfae25f55bf545c2bc2befab0463461\firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
+69                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+69-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\bbfae25f55bf545c2bc2befab0463461\firebase-storage-19.2.1\AndroidManifest.xml:34:17-107
+70                android:value="com.google.firebase.components.ComponentRegistrar" />
+70-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\bbfae25f55bf545c2bc2befab0463461\firebase-storage-19.2.1\AndroidManifest.xml:35:17-82
+71            <!--
+72                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+73                clients to use it as well, by defining this registrar in their own core/common library.
+74            -->
+75            <meta-data
+75-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+76                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+76-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+78        </service>
+79
+80        <provider
+80-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+81            android:name="com.google.firebase.provider.FirebaseInitProvider"
+81-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+82            android:authorities="com.mys3soft.mys3chat.firebaseinitprovider"
+82-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+83            android:directBootAware="true"
+83-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+84            android:exported="false"
+84-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+85            android:initOrder="100" />
+85-->[com.google.firebase:firebase-common:19.5.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\ebee3fb9b85e38dc2fbcfaaf752da56e\firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+86
+87        <activity
+87-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\96afbe3a97a8dc9a2eed3c1f159b6faa\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+88            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+88-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\96afbe3a97a8dc9a2eed3c1f159b6faa\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+89            android:exported="false"
+89-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\96afbe3a97a8dc9a2eed3c1f159b6faa\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+90            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+90-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\96afbe3a97a8dc9a2eed3c1f159b6faa\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+91
+92        <meta-data
+92-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\b98d6072f02b8c8db21b342e772a4eeb\play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+93            android:name="com.google.android.gms.version"
+93-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\b98d6072f02b8c8db21b342e772a4eeb\play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+94            android:value="@integer/google_play_services_version" />
+94-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\hp\.gradle\caches\transforms-2\files-2.1\b98d6072f02b8c8db21b342e772a4eeb\play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+95    </application>
+96
+97</manifest>

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "applicationId": "com.mys3soft.mys3chat",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "PROCESSED_RES"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 28,
+        "versionName": "3.8",
+        "outputFile": "app-debug.apk",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "resources-debug.ap_",
+      "properties": {
+        "packageId": "com.mys3soft.mys3chat",
+        "split": "",
+        "minSdkVersion": "16"
+      }
+    }
+  ]
+}

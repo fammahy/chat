@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">327290165114-rmfdq77q5p95n7fbrbr8ckbgej65rsbp.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://maryam-6b14a.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">327290165114</string>
+    <string name="google_api_key" translatable="false">AIzaSyCcc0F0HV_8GMDqJP4_zPPFZ9mBcU2AZ3k</string>
+    <string name="google_app_id" translatable="false">1:327290165114:android:f0b12fa65cb74b48ace8c3</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCcc0F0HV_8GMDqJP4_zPPFZ9mBcU2AZ3k</string>
+    <string name="google_storage_bucket" translatable="false">maryam-6b14a.appspot.com</string>
+    <string name="project_id" translatable="false">maryam-6b14a</string>
+</resources>
