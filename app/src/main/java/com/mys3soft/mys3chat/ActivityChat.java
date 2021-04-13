@@ -1,22 +1,31 @@
 package com.mys3soft.mys3chat;
 
 
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
+import android.provider.MediaStore;
+import androidx.annotation.NonNull;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.Editable;
 import android.text.SpannableString;
 import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,14 +34,21 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+
 import com.firebase.client.FirebaseError;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.mys3soft.mys3chat.Models.Message;
 import com.mys3soft.mys3chat.Models.StaticInfo;
 import com.mys3soft.mys3chat.Models.User;
@@ -40,19 +56,24 @@ import com.mys3soft.mys3chat.Services.DataContext;
 import com.mys3soft.mys3chat.Services.LocalUserService;
 import com.mys3soft.mys3chat.Services.Tools;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import hani.momanii.supernova_emoji_library.Actions.EmojIconActions;
 import hani.momanii.supernova_emoji_library.Helper.EmojiconEditText;
 import hani.momanii.supernova_emoji_library.Helper.EmojiconTextView;
 
 
-public class ActivityChat extends AppCompatActivity {
+public class ActivityChat extends AppCompatActivity{
     DataContext db = new DataContext(this, null, null, 1);
     EditText messageArea;
     ScrollView scrollView;
@@ -62,11 +83,24 @@ public class ActivityChat extends AppCompatActivity {
     String friendEmail;
     Firebase refUser;
     private int pageNo = 2;
+    boolean retrieving = false;
     private FloatingActionButton submit_btn;
+    RelativeLayout rLayout; ImageView img;
 
     private ChildEventListener reference1Listener;
     private ChildEventListener refFriendListener;
     private String friendFullName = "";
+
+
+
+    // get the Firebase  storage reference
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    StorageReference storageReference = storage.getReference();
+
+    // Uri indicates, where the image will be picked from
+    private Uri filePath; private String strfilePath="";
+
+    Bitmap bitmap; String imgname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +110,9 @@ public class ActivityChat extends AppCompatActivity {
         setSupportActionBar(toolbar);
         messageArea = (EditText) findViewById(R.id.et_Message);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
+        rLayout = (RelativeLayout) findViewById(R.id.rlOverlay);
+        img = (ImageView) findViewById(R.id.imageView);
+        //rLayout.setAlpha(0);
         layout = (LinearLayout) findViewById(R.id.layout1);
         user = LocalUserService.getLocalUserFromPreferences(this);
         Firebase.setAndroidContext(this);
@@ -95,9 +132,9 @@ public class ActivityChat extends AppCompatActivity {
                         db.saveMessageOnLocakDB(senderEmail, user.Email, mess, sentDate);
                         if (senderEmail.equals(user.Email)) {
                             // login user
-                            appendMessage(mess, sentDate, 1, false);
+                            appendMessage(mess, sentDate, 1, false,layout.getChildCount());
                         } else {
-                            appendMessage(mess, sentDate, 2, false);
+                            appendMessage(mess, sentDate, 2, false,layout.getChildCount());
                         }
                     } catch (Exception e) {
 
@@ -198,7 +235,7 @@ public class ActivityChat extends AppCompatActivity {
         List<Message> chatList = db.getChat(user.Email, friendEmail, 1);
         for (Message item : chatList) {
             int messageType = item.FromMail.equals(user.Email) ? 1 : 2;
-            appendMessage(item.Message, item.SentDate, messageType, false);
+            appendMessage(item.Message, item.SentDate, messageType, false,layout.getChildCount());
         }
 
         friendFullName = extras.getString("FriendFullName");
@@ -267,14 +304,22 @@ public class ActivityChat extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                List<Message> chatList = db.getChat(user.Email, friendEmail, pageNo);
-                layout.removeAllViews();
-                for (Message item : chatList) {
-                    int messageType = item.FromMail.equals(user.Email) ? 1 : 2;
-                    appendMessage(item.Message, item.SentDate, messageType, true);
-                }
+              // new Runnable() { public void run(){
+                    List<Message> chatList = db.getChat(user.Email, friendEmail, pageNo);
+                     layout.removeAllViews(); int index=0;
+                for(
+                    Message item :chatList)
+
+                    {
+                       // if(retrieving){try{new Thread().wait(1000);}catch (Exception e){e.printStackTrace();}}
+                        int messageType = item.FromMail.equals(user.Email) ? 1 : 2;
+                        appendMessage(item.Message, item.SentDate, messageType, true,index);
+                        index+=1;
+
+                    }
                 swipeRefreshLayout.setRefreshing(false);
-                pageNo++;
+                    pageNo++;
+               // }};
             }
         });
         
@@ -290,6 +335,7 @@ public class ActivityChat extends AppCompatActivity {
         });
 
     }
+
 
     @Override
     protected void onStart() {
@@ -351,14 +397,14 @@ public class ActivityChat extends AppCompatActivity {
         super.onNewIntent(intent);
 
         Bundle extras = intent.getExtras();
-        layout.removeAllViews();
+        layout.removeAllViews(); int index=0;
         friendEmail = extras.getString("FriendEmail");
         friendFullName = extras.getString("FriendFullName");
         getSupportActionBar().setTitle(friendFullName);
         List<Message> chatList = db.getChat(user.Email, friendEmail, 1);
         for (Message item : chatList) {
             int messageType = item.FromMail.equals(user.Email) ? 1 : 2;
-            appendMessage(item.Message, item.SentDate, messageType, false);
+            appendMessage(item.Message, item.SentDate, messageType, false,index); index+=1;
         }
 
         StaticInfo.UserCurrentChatFriendEmail = friendEmail;
@@ -398,24 +444,116 @@ public class ActivityChat extends AppCompatActivity {
             db.saveMessageOnLocakDB(user.Email, friendEmail, message, sentDate);
 
             // appendmessage
-            appendMessage(message, sentDate, 1, false);
+            appendMessage(message, sentDate, 1, false, layout.getChildCount());
 
         }
     }
 
-    public void appendMessage(String mess, String sentDate, int messType, final boolean scrollUp) {
+    //this function is called when a user clicks the camera icon from the chat page
+    public void btn_SendImageClick(View view) {
+        Intent photoPickerIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        photoPickerIntent.setType("image/*");
+        photoPickerIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        photoPickerIntent.addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+        startActivityForResult(photoPickerIntent, 10);
+
+
+    }
+
+    public void btn_closeImage(View view) {
+        ScrollView layout = (ScrollView) findViewById(R.id.scrollView);
+        layout.setVisibility(View.VISIBLE);
+        LinearLayout layout2 = (LinearLayout)findViewById(R.id.layout2);
+        layout2.setVisibility(View.INVISIBLE);
+
+
+
+    }
+
+    public void btn_Upload(View v){
+       // final String rand =  UUID.randomUUID().toString();
+        StorageReference ref = storageReference.child("images/"+imgname);
+        ref.putFile(filePath)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                       // progressDialog.dismiss();
+                        Toast.makeText(ActivityChat.this, "Photo Sent", Toast.LENGTH_SHORT).show();
+
+
+                        String message = "<image>"+imgname+"</image>";
+                        String local_message = "<image>"+imgname+"</image>";
+                        Map<String, String> map = new HashMap<>();
+                        map.put("Message", message);
+                        map.put("SenderEmail", user.Email);
+                        map.put("FirstName", user.FirstName);
+                        map.put("LastName", user.LastName);
+
+                        DateFormat dateFormat = new SimpleDateFormat("dd MM yy hh:mm a");
+                        Date date = new Date();
+                        String sentDate = dateFormat.format(date);
+
+                        map.put("SentDate", sentDate);
+                        //reference1.push().setValue(map);
+                        reference2.push().setValue(map);
+                        refNotMess.push().setValue(map);
+
+                        // save in local db
+                        db.saveMessageOnLocakDB(user.Email, friendEmail,local_message, sentDate);
+
+                        // appendmessage
+                        appendMessage(message, sentDate, 1, false, layout.getChildCount());
+                        btn_closeImage(null);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                       // progressDialog.dismiss();
+                        Toast.makeText(ActivityChat.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                        double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
+                                .getTotalByteCount());
+                        //progressDialog.setMessage("Uploaded "+(int)progress+"%");
+                    }
+                });
+    }
+
+    public void setImage(Bitmap bitmap){
+        img = (ImageView) findViewById(R.id.imageView);
+        img.setImageBitmap(bitmap);
+        FileOutputStream foStream; imgname = UUID.randomUUID().toString();
+        try {
+            foStream = getApplicationContext().openFileOutput(imgname, Context.MODE_PRIVATE);
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 100, foStream);
+            foStream.close();
+        } catch (Exception e) {
+            Log.d("saveImage", "Exception 2, Something went wrong!");
+            Toast.makeText(ActivityChat.this, e.toString(), Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+    }
+
+    public void appendMessage(String mess, String sentDate, int messType, final boolean scrollUp, final int index) {
 
         EmojiconTextView textView = new EmojiconTextView(this);
-        textView.setEmojiconSize(60);
+        textView.setEmojiconSize(100);
         sentDate = Tools.messageSentDateProper(sentDate);
         SpannableString dateString = new SpannableString(sentDate);
         dateString.setSpan(new RelativeSizeSpan(0.7f), 0, sentDate.length(), 0);
         dateString.setSpan(new ForegroundColorSpan(Color.GRAY), 0, sentDate.length(), 0);
 
-        textView.setText(mess + "\n");
+        if(!mess.contains("<image>")) {textView.setText(mess + "\n");}else{textView.setText("");}
         textView.append(dateString);
         //textView.setTextSize(15);
         textView.setTextColor(Color.parseColor("#000000"));
+
+    //image text
+        ImageView image = null;
 
 
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -423,22 +561,83 @@ public class ActivityChat extends AppCompatActivity {
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 6f
         );
+        // for image
+        final LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(
+                600, 500,
+                6f
+        );
         lp.setMargins(0, 0, 0, 5);
+        lp2.setMargins(0, 0, 0, 0);
+
         // 1 user
         if (messType == 1) {
+            if(mess.contains("<image>")) {
+                Log.d("image url: ",mess.substring(7,mess.length()-8));
+                image = new ImageView(this);//image.setImageURI(android.net.Uri.parse(mess.substring(7,mess.length()-8)));
+                Bitmap bitmap = null;
+                FileInputStream fiStream;
+                try {
+                    fiStream    = getApplicationContext().openFileInput(mess.substring(7,mess.length()-8));
+                    bitmap      = BitmapFactory.decodeStream(fiStream);
+                    image.setImageBitmap(bitmap);
+                    fiStream.close();
+                } catch (Exception e) {
+                    Log.d("saveImage", "Exception 3, Something went wrong!");
+                    e.printStackTrace();
+                }
+
+            }
             textView.setBackgroundResource(R.drawable.messagebg1);
             lp.gravity = Gravity.RIGHT;
+            lp2.gravity = Gravity.RIGHT;
         }
         //  2 friend
         else {
             textView.setBackgroundResource(R.drawable.messagebg2);
             lp.gravity = Gravity.LEFT;
+            lp2.gravity = Gravity.LEFT;
+
+            if(mess.contains("<image>")) {
+                retrieving = true;
+                //get the image from firebase storage
+                StorageReference mImageRef =
+                        FirebaseStorage.getInstance().getReference("images/"+mess.substring(7,mess.length()-8));
+                final long ONE_MEGABYTE = 1024 * 1024;
+                mImageRef.getBytes(ONE_MEGABYTE)
+                        .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                            @Override
+                            public void onSuccess(byte[] bytes) {
+                                Bitmap bm = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                                DisplayMetrics dm = new DisplayMetrics();
+                                getWindowManager().getDefaultDisplay().getMetrics(dm);
+                                ImageView image = new ImageView(getApplicationContext());
+                                image.setImageBitmap(bm);
+                                image.setLayoutParams(lp2);
+                                layout.addView(image,index);
+                                retrieving = false;
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle any errors
+                        retrieving = false;
+                    }
+                });
+
+                //end of getting image
+                //image = new ImageView(this);image.setImageURI(filePath);
+            }
+
         }
 
         textView.setPadding(12, 4, 12, 4);
 
         textView.setLayoutParams(lp);
-        layout.addView(textView);
+
+
+        if(image!=null){image.setLayoutParams(lp2);layout.addView(image,index);}
+
+        else layout.addView(textView,index);
         scrollView.post(new Runnable() {
             @Override
             public void run() {
@@ -510,8 +709,37 @@ public class ActivityChat extends AppCompatActivity {
             getSupportActionBar().setTitle(updatedFriend.FirstName);
         }
 
+        if (requestCode == 10 && resultCode == Activity.RESULT_OK) {
+            Uri selectedImage = data.getData();
+            filePath = selectedImage;
+            //strfilePath = RealPathUtil.getRealPathFromURI_API19(this,selectedImage);
+            try {
+                ScrollView layout = (ScrollView) findViewById(R.id.scrollView);
+                layout.setVisibility(View.INVISIBLE);
+
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(ActivityChat.this.getContentResolver(), selectedImage);
+                setImage(bitmap);
+                LinearLayout layout2 = (LinearLayout)findViewById(R.id.layout2);
+                layout2.setVisibility(View.VISIBLE);
+
+            } catch (IOException e) {
+                Log.i("TAG", "Some exception " + e);
+            }
+        }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 
 
+
+
+
+
+
 }
+
+
+
+
+
+

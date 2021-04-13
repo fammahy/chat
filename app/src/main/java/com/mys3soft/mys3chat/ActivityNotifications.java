@@ -1,12 +1,9 @@
 package com.mys3soft.mys3chat;
 
-import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -15,21 +12,12 @@ import com.firebase.client.FirebaseError;
 import com.mys3soft.mys3chat.Models.NotificationModel;
 import com.mys3soft.mys3chat.Models.StaticInfo;
 import com.mys3soft.mys3chat.Models.User;
-import com.mys3soft.mys3chat.Services.DataContext;
-import com.mys3soft.mys3chat.Services.IFireBaseAPI;
 import com.mys3soft.mys3chat.Services.LocalUserService;
 import com.mys3soft.mys3chat.Services.Tools;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import retrofit2.Call;
 
 public class ActivityNotifications extends AppCompatActivity {
 

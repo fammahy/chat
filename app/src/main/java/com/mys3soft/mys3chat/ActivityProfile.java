@@ -1,6 +1,6 @@
 package com.mys3soft.mys3chat;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -8,8 +8,6 @@ import com.mys3soft.mys3chat.Models.User;
 import com.mys3soft.mys3chat.Services.DataContext;
 import com.mys3soft.mys3chat.Services.LocalUserService;
 import com.mys3soft.mys3chat.Services.Tools;
-
-import org.w3c.dom.Text;
 
 public class ActivityProfile extends AppCompatActivity {
 

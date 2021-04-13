@@ -5,17 +5,16 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.tabs.TabLayout;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,7 +22,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -547,7 +545,7 @@ public class ActivityMain extends AppCompatActivity {
                 return call.execute().body();
             } catch (IOException e) {
                 e.printStackTrace();
-                pd.hide();
+               // pd.hide();
             }
             return null;
         }
@@ -555,7 +553,7 @@ public class ActivityMain extends AppCompatActivity {
         @Override
         protected void onPostExecute(String jsonListString) {
 
-            try {
+            try { pd.hide();
                 user = LocalUserService.getLocalUserFromPreferences(getApplicationContext());
                 List<User> friendList = new ArrayList<>();
                 JSONObject userFriendTree = new JSONObject(jsonListString);

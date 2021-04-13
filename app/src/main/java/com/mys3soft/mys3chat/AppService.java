@@ -4,12 +4,11 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.os.Vibrator;
-import android.provider.ContactsContract;
-import android.support.v7.app.NotificationCompat;
+//import androidx.media.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
+//import androidx.appcompat.app.NotificationCompat;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;

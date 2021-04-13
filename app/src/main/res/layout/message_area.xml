@@ -33,7 +33,20 @@
         emojicon:emojiconSize="28sp"
         />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/picture_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="#ffffff"
+        android:backgroundTintMode="src_atop"
+        android:clickable="true"
+        android:elevation="0dp"
+        android:onClick="btn_SendImageClick"
+        android:src="@android:drawable/ic_menu_camera"
+        emojicon:fabSize="mini"
+        emojicon:pressedTranslationZ="0dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/submit_btn"
         android:layout_width="35dp"
         android:layout_height="35dp"
