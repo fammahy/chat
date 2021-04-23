@@ -8,6 +8,9 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3cbc4848-5a32-4d14-b63c-b4645255fbcd" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +104,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.3.3" />
+    <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="PsdUISettings">

@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "327290165114",
+    "firebase_url": "https://maryam-6b14a.firebaseio.com",
+    "project_id": "maryam-6b14a",
+    "storage_bucket": "maryam-6b14a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327290165114:android:300427169bfd7a07ace8c3",
+        "android_client_info": {
+          "package_name": "com.example.maryam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327290165114-rmfdq77q5p95n7fbrbr8ckbgej65rsbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcc0F0HV_8GMDqJP4_zPPFZ9mBcU2AZ3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327290165114-rmfdq77q5p95n7fbrbr8ckbgej65rsbp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "327290165114-4iq6ov0i8fueferla1q6j83ho9g199o4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nulXpress.com"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327290165114:android:f0b12fa65cb74b48ace8c3",
+        "android_client_info": {
+          "package_name": "com.mys3soft.mys3chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327290165114-rmfdq77q5p95n7fbrbr8ckbgej65rsbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcc0F0HV_8GMDqJP4_zPPFZ9mBcU2AZ3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327290165114-rmfdq77q5p95n7fbrbr8ckbgej65rsbp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "327290165114-4iq6ov0i8fueferla1q6j83ho9g199o4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nulXpress.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -42,7 +42,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../../app/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 29 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-scalars:2.1.0" level="project" />
