@@ -1,0 +1,1 @@
+# I have designed and developed an application that can be connected to smartphone devices. This application allows the exchange of messages and photos on a one-to-one basis. It allows a user to sign up/log in the application securely. It allows uploads of photos from the photo gallery and a description of the photo.
